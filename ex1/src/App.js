@@ -1,20 +1,46 @@
+import { useState } from 'react';
 import './App.css';
 import { Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 
 export default function App() {
 
+  const [mssv, setMssv] = useState('');
+  const [name, setName] = useState('');
+  const [dob, setDob] = useState('');
+  const [email, setEmail] = useState('');
+  const [students, setStudents] = useState([]);
+
+  const handleAddStudent = () => {
+    const newStudent = {mssv, name, dob, email};
+    setStudents([...students, newStudent]);
+  }
+
+  const handleDeleteStudent = (index) => {
+    const updateStudent = [...students];
+    updateStudent.splice(index, 1);
+    setStudents(updateStudent);
+    }
+
   return (
     <div>
       <div className='input'>
         <div>
-          <input type="text" placeholder='MSSV'></input>
-          <input type="text" placeholder='Họ và tên'></input>
+          <input type="text" placeholder='MSSV' value={mssv} onChange={(e) => {
+            setMssv(e.target.value);
+          }}></input>
+          <input type="text" placeholder='Họ và tên' value={name} onChange={(e) => {
+            setName(e.target.value);
+          }}></input>
         </div>
         <div>
-          <input type="text" placeholder='Ngày sinh'></input>
-          <input type="text" placeholder='Email'></input>
+          <input type="text" placeholder='Ngày sinh' value={dob} onChange={(e) => {
+            setDob(e.target.value);
+          }}></input>
+          <input type="text" placeholder='Email' value={email} onChange={(e) => {
+            setEmail(e.target.value);
+          }}></input>
         </div>
-        <button>Thêm</button>
+        <button onClick={handleAddStudent}>Thêm</button>
       </div>
       <div className='output'>
         <Table>
@@ -29,30 +55,16 @@ export default function App() {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow>
-              <TableCell>1</TableCell>
-              <TableCell>20211234</TableCell>
-              <TableCell>Phạm Văn A</TableCell>
-              <TableCell></TableCell>
-              <TableCell></TableCell>
-              <TableCell><button>Xóa</button></TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>2</TableCell>
-              <TableCell>20211546</TableCell>
-              <TableCell>Trần Đức B</TableCell>
-              <TableCell></TableCell>
-              <TableCell></TableCell>
-              <TableCell><button>Xóa</button></TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>3</TableCell>
-              <TableCell>20216586</TableCell>
-              <TableCell>Nguyễn Văn C</TableCell>
-              <TableCell></TableCell>
-              <TableCell></TableCell>
-              <TableCell><button>Xóa</button></TableCell>
-            </TableRow>
+            {students.map((student, index) => (
+              <TableRow key={index}>
+                <TableCell>{index + 1}</TableCell>             
+                <TableCell>{student.mssv}</TableCell>             
+                <TableCell>{student.name}</TableCell>             
+                <TableCell>{student.dob}</TableCell>             
+                <TableCell>{student.email}</TableCell>
+                <TableCell><button onClick={() => handleDeleteStudent(index)}>Xóa</button></TableCell>        
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </div>
