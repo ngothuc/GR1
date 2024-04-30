@@ -22,7 +22,7 @@ export default function App() {
     }
 
   return (
-    <div>
+    <div className='container'>
       <div className='input'>
         <div>
           <input type="text" placeholder='MSSV' value={mssv} onChange={(e) => {

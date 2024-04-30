@@ -1,1 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 50px;
+}
 
+.input {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input > div {
+  align-self: flex-end;
+  display: flex;
+  gap: 10px;
+}
+
+.input button {
+  width: 50px;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  align-self: flex-end;
+}
+
+.output {
+  border: 1px solid black;
+}
+
+.output button {
+  width: 50px;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+}
+
+.output th, td {
+  border: 2px solid #000;
+  padding: 8px;
+}
