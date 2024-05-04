@@ -1,19 +1,40 @@
+.container {
+  border: solid 3px blue;
+  padding: 5px 10px 15px 10px;
+}
+
 .grid-container {
+  border: solid 1px black;
   display: grid;
-  column-gap: 50px;
-  row-gap: 20px;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
-  align-content: end;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
 }
+
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+  padding: 35%;
+  background-size: cover;
 }
+
 .grid-item-1 {
-  grid-row: 1 / span 2;
+  background-image: url("../pictures/1.jpg");
+}
+
+.grid-item-2 {
+  background-image: url("../pictures/2.jpg"); 
+}
+
+.grid-item-3 {
+  background-image: url("../pictures/3.jpg");
+}
+
+.grid-item-4 {
+  background-image: url("../pictures/4.jpg");
+}
+
+.grid-item-5 {
+  background-image: url("../pictures/5.jpg");
+}
+
+.grid-item-6 {
+  background-image: url("../pictures/6.jpg");
 }
