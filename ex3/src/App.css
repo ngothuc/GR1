@@ -15,14 +15,14 @@
   width: 75px;
   height: 75px;
   border: 1px solid blue;
-  background-image: url("mario.png");
+  background-image: url("../pictures/mario.png");
   background-size: cover;
 }
 .diamond {
   width: 75px;
   height: 75px;
   border: 1px solid blue;
-  background-image: url("diamond.png");
+  background-image: url("../pictures/diamond.png");
   background-size: cover;
 }
 .controler {
