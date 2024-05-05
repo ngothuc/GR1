@@ -21,7 +21,7 @@ function App() {
       height: '75px',
       border: '1px solid blue',
       backgroundColor: value === 1 ? 'blue' : 'white',
-      // backgroundImage: value === 0 ? "url('white.jpg')" : value === 1 ? "url('blue.jpg')" : value === 2 ? "url('mario.png')" : "url('diamond.png')",
+      // backgroundImage: value === 0 ? "url('../pictures/white.jpg')" : value === 1 ? "url('../pictures/blue.jpg')" : value === 2 ? "url('../pictures/mario.png')" : "url('../pictures/diamond.png')",
       // backgroundSize: 'cover',
     }
     if(value <= 1) return <div style={cellStyle}></div>
