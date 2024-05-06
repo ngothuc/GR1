@@ -1,0 +1,52 @@
+.container {
+  border: 1px solid black;
+  margin: 15px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.mazeTable {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.row > div {
+  width: 80px;
+  height: 80px;
+  border: 1px solid blue;
+}
+
+.blue-cell {
+  background-color: rgb(68, 132, 220);
+}
+
+.white-cell {
+  background-color: white;
+}
+
+.mario-cell {
+  background: url("../pictures/mario.png");
+  background-size: cover;
+}
+
+.diamond-cell {
+  background: url("../pictures/diamond.png");
+  background-size: cover;
+}
+
+.row {
+  display: flex;
+}
+
+.controler {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.run-button {
+  background-color: rgb(95, 212, 95);
+  color: white;
+  
+}
