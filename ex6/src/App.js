@@ -1,25 +1,80 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import faker from 'faker';
 
-function App() {
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+);
+
+export const options = {
+  responsive: false,
+  maintainAspectRatio: false,
+  aspectRatio: 3,
+};
+
+
+const labels = ['', '', '', '', '', '', '', ''];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
+      backgroundColor: 'blue',
+    },
+  ],
+};
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function drawTableBody(n) {
+  const rows = [];
+  for (let i = 1; i <= n; i++) {
+    rows.push(
+      <TableRow key={i}>
+        <input type='number' defaultValue={randomInt(0, 100)}></input>
+        <input type='number' defaultValue={randomInt(0, 100)}></input>
+      </TableRow>
+    );
+  }
+  return <TableBody>{rows}</TableBody>;
+}
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <div className='data'>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>X</TableCell>
+              <TableCell>Y</TableCell>
+            </TableRow>
+          </TableHead>          
+            {drawTableBody(8)}
+        </Table>
+      </div>
+      <div className='bar-container'>
+        <Bar options={options} data={data} />
+      </div>
     </div>
   );
 }
-
-export default App;
