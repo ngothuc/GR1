@@ -1,7 +1,8 @@
 import './App.css';
-import {Table, TableHead, TableBody, TableRow, TableCell} from '@mui/material';
+import { Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 import * as XLSX from 'xlsx';
 import jsPDF from 'jspdf';
+import font from './Raleway-Black-normal.js';
 
 function App() {
 
@@ -14,14 +15,19 @@ function App() {
 
   const exportToPDF = () => {
     const doc = new jsPDF();
-    //doc.text('Data Table', 10, 10);
+    doc.addFileToVFS('MyFont.ttf', font);
+    doc.addFont('MyFont.ttf', 'font', 'normal');
+    doc.setFont('MyFont');
+
     let y = 20;
+
+    doc.text('Test tiếng Việt cực mạnh', 0, 5);
 
     document.querySelectorAll('table thead tr').forEach(row => {
       let x = 10;
       row.querySelectorAll('th').forEach(cell => {
         doc.text(cell.innerText, x, y);
-        x += 60;
+        x += 41;
       })
       y += 10;
     })
@@ -31,7 +37,7 @@ function App() {
       let x = 10;
       row.querySelectorAll('td').forEach(cell => {
         doc.text(cell.innerText, x, y);
-        x += 60;
+        x += 41;
       })
       y += 10;
     })
@@ -66,14 +72,14 @@ function App() {
             <TableRow>
               <TableCell>U002</TableCell>
               <TableCell>Tran Van B</TableCell>
-              <TableCell>bbb@gmail.com</TableCell>
+              <TableCell>bb@gmail.com</TableCell>
               <TableCell>09124566</TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
               <TableCell>U003</TableCell>
               <TableCell>Le Thi C</TableCell>
-              <TableCell>ccc@gmail.com</TableCell>
+              <TableCell>cc@gmail.com</TableCell>
               <TableCell>09134524</TableCell>
               <TableCell></TableCell>
             </TableRow>
