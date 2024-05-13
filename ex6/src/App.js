@@ -53,10 +53,11 @@ export default function App() {
   const options = {
     scales: {
       x : {
-        
+        title: { display: true, text: 'X', align: 'end' }
       },
       y : {
         beginAtZero: true,
+        title: { display: true, text: 'Y', align: 'end' }
       },
     },
   };
@@ -70,7 +71,6 @@ export default function App() {
         type: 'bar',
         label: '',
         backgroundColor: 'blue',
-        borderColor: 'black',
         data: inputValues.map((value, i) => value),
       },
     ],

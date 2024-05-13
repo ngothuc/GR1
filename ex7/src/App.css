@@ -1,0 +1,16 @@
+.controler {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 70px;
+  gap: 10px;
+}
+
+.controler > button {
+  background-color: rgb(70,102,255);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  padding: 8px;
+  width: 80px;
+}
