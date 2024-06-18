@@ -2,7 +2,7 @@ import './App.css';
 import { Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 import * as XLSX from 'xlsx';
 import jsPDF from 'jspdf';
-import font from './Raleway-Black-normal.js';
+import font from './VNTIME-normal.js';
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
 
     let y = 20;
 
-    doc.text('Test tiếng Việt cực mạnh', 0, 5);
+    //doc.text('Test tiếng Việt cực mạnh', 0, 5);
 
     document.querySelectorAll('table thead tr').forEach(row => {
       let x = 10;
