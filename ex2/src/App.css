@@ -1,40 +1,69 @@
-.container {
-  border: solid 3px blue;
-  padding: 5px 10px 15px 10px;
+.grid {
+  text-align: center;
 }
-
-.grid-container {
-  border: solid 1px black;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+.grid h1 {
+  display: inline-block;
+  padding: 20px 0;
+  font-size: 28px;
+  color: #088178;
+  font-weight: 500;
 }
-
-.grid-container > div {
-  padding: 35%;
-  background-size: cover;
+.btn {
+  margin-left: auto;
+  font-size: 16px;
+  padding: 10px 28px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #fff;
+  background: black;
+  cursor: pointer;
 }
-
-.grid-item-1 {
-  background-image: url("../pictures/1.jpg");
+.btn:hover {
+  opacity: 0.9;
 }
-
-.grid-item-2 {
-  background-image: url("../pictures/2.jpg"); 
+form {
+  display: flex;
+  flex-direction: column;
+  /* width: 30%; */
+  align-items: center;
+  justify-content: center;
 }
-
-.grid-item-3 {
-  background-image: url("../pictures/3.jpg");
+.form-group {
+  width: 270px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
-
-.grid-item-4 {
-  background-image: url("../pictures/4.jpg");
+.form-group label {
+  font-weight: 600;
+  /* margin-right: 10px; */
 }
-
-.grid-item-5 {
-  background-image: url("../pictures/5.jpg");
+.form-group input {
+  height: 34px;
+  margin-top: 8px;
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-radius: 8px;
 }
-
-.grid-item-6 {
-  background-image: url("../pictures/6.jpg");
+.grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+.grid .row {
+  display: flex;
+}
+.grid .row .boxes {
+  display: flex;
+  height: 200px;
+  width: 250px;
+  background-color: #fff;
+  border: 1px solid #000;
+  overflow: hidden;
+}
+.grid .row .boxes img {
+  width: 100%;
+  object-fit: cover;
 }

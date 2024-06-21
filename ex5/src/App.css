@@ -6,9 +6,24 @@
 }
 
 input {
-    width: 600px;
+    width: 1000px;
 }
 
 .search-bar {
     margin: 10px;
+}
+
+.map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
 }

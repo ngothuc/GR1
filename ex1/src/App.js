@@ -11,7 +11,7 @@ export default function App() {
   const [students, setStudents] = useState([]);
 
   const handleAddStudent = () => {
-    const newStudent = {mssv, name, dob, email};
+    const newStudent = { mssv, name, dob, email };
     setStudents([...students, newStudent]);
   }
 
@@ -19,7 +19,7 @@ export default function App() {
     const updateStudent = [...students];
     updateStudent.splice(index, 1);
     setStudents(updateStudent);
-    }
+  }
 
   return (
     <div className='container'>
@@ -57,12 +57,12 @@ export default function App() {
           <TableBody>
             {students.map((student, index) => (
               <TableRow key={index}>
-                <TableCell>{index + 1}</TableCell>             
-                <TableCell>{student.mssv}</TableCell>             
-                <TableCell>{student.name}</TableCell>             
-                <TableCell>{student.dob}</TableCell>             
+                <TableCell>{index + 1}</TableCell>
+                <TableCell>{student.mssv}</TableCell>
+                <TableCell>{student.name}</TableCell>
+                <TableCell>{student.dob}</TableCell>
                 <TableCell>{student.email}</TableCell>
-                <TableCell><button onClick={() => handleDeleteStudent(index)}>Xóa</button></TableCell>        
+                <TableCell><button onClick={() => handleDeleteStudent(index)}>Xóa</button></TableCell>
               </TableRow>
             ))}
           </TableBody>

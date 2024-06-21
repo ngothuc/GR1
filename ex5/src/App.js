@@ -33,11 +33,11 @@ function App() {
 
       if (!start) {
         console.log("start: " + address);
-        setStartAdd(address);
+        setStartAdd(address + e.latlng);
         setStart({ lat, lng });
       } else if (!end) {
         console.log("end: " + address);
-        setEndAdd(address);
+        setEndAdd(address + e.latlng);
         setEnd({ lat, lng });
       }
     } catch (error) {

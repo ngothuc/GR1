@@ -1,10 +1,12 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 function App() {
 
+  const [move, setMove] = useState([]);
+  const [moves, setMoves] = useState('');
+
   const maze = [
-    //0 là ô trống, 1 là tường
     [0, 0, 0, 0, 3, 0],
     [0, 0, 0, 1, 1, 1],
     [0, 0, 0, 0, 0, 0],
@@ -21,12 +23,10 @@ function App() {
       height: '75px',
       border: '1px solid blue',
       backgroundColor: value === 1 ? 'blue' : 'white',
-      // backgroundImage: value === 0 ? "url('../pictures/white.jpg')" : value === 1 ? "url('../pictures/blue.jpg')" : value === 2 ? "url('../pictures/mario.png')" : "url('../pictures/diamond.png')",
-      // backgroundSize: 'cover',
     }
-    if(value <= 1) return <div style={cellStyle}></div>
-    else if(value === 2) return <div className='mario'></div>
-    else if(value === 3) return <div className='diamond'></div>
+    if (value <= 1) return <div style={cellStyle}></div>
+    else if (value === 2) return <div className='mario'></div>
+    else if (value === 3) return <div className='diamond'></div>
   };
 
   const MazeRow = ({ row }) => {
@@ -49,17 +49,30 @@ function App() {
     );
   }
 
+  const handleSubmit = () => {
+    setMoves(move);
+  }
+
   return (
     <div className='container'>
       <div className='mazeTable'><MazeTable maze={maze} /></div>
       <div className='controler'>
         <div>
-          <div>Move Up</div>
-          <div>Move Down</div>
-          <div>Move Left</div>
-          <div>Move Right</div>
+          <form className='form' onSubmit={handleSubmit}>
+            <textarea
+              className='move-data'
+              name='move-data'
+              rows={10}
+              cols={50}
+              onChange={(e) => {
+                console.log(e.target.value);
+                const newMove = [...move, e.target.value];
+                setMove(newMove);
+              }}
+            />
+          </form>
         </div>
-        <button>Run</button>
+        <button onClick={handleSubmit}>Run</button>
       </div>
     </div>
   );
